@@ -4,6 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TheBudgetStationery"
+        
+        xmlns:userControls="clr-namespace:TheBudgetStationery.View.UserControls"
+        
         mc:Ignorable="d" WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown"
         Title="MainWindow" Height="450" Width="800">
 
@@ -18,16 +21,25 @@
         </Grid.RowDefinitions>
 
         <!-- Row One -->
-        <Rectangle Fill="LightGray"/>
-        <TextBlock Text=" The Budget Stationery" FontSize="27"/>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Name="btnMinimize" Content="_" Width="40" Height="40" BorderBrush="Transparent" 
-                    Background="Transparent" Foreground="Black" Click="btnMinimize_Click"/>
-            <Button Name="btnMaximize" Content="🗖" Width="40" Height="40" BorderBrush="Transparent" 
-                    Background="Transparent" Foreground="Black" Click="btnMaximize_Click"/>
-            <Button Name="btnClose" Content="X" Width="40" Height="40" BorderBrush="Transparent" 
-                    Background="Transparent" Foreground="Black" Click="btnClose_Click"/>
-        </StackPanel>
+        <Grid Grid.Row="0">
+            <Rectangle Fill="LightGray"/>
+            <TextBlock Text=" The Budget Stationery" FontSize="27"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Name="btnMinimize" Content="_" Width="40" Height="40" BorderBrush="Transparent" 
+                        Background="Transparent" Foreground="Black" Click="btnMinimize_Click"/>
+                <Button Name="btnMaximize" Content="🗖" Width="40" Height="40" BorderBrush="Transparent" 
+                        Background="Transparent" Foreground="Black" Click="btnMaximize_Click"/>
+                <Button Name="btnClose" Content="X" Width="40" Height="40" BorderBrush="Transparent" 
+                        Background="Transparent" Foreground="Black" Click="btnClose_Click"/>
+            </StackPanel>
+        </Grid>
+        <!-- Row Two -->
+        <Grid Grid.Row="1">
+            <userControls:Envelope Width="700" Height="90" VerticalAlignment="Top" Margin="30"/>
+        </Grid>
+
+        
+
 
     </Grid>
 </Window>

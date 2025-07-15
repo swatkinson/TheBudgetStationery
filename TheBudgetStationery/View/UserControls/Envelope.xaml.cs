@@ -13,16 +13,12 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TheBudgetStationery.View.UserControls
+namespace TheBudgetStationery.View.UserControls;
+
+public partial class Envelope : UserControl
 {
-    /// <summary>
-    /// Interaction logic for Envelope.xaml
-    /// </summary>
-    public partial class Envelope : UserControl
+    public Envelope()
     {
-        public Envelope()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }
