@@ -1,0 +1,33 @@
+﻿<Window x:Class="TheBudgetStationery.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TheBudgetStationery"
+        mc:Ignorable="d" WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        Title="MainWindow" Height="450" Width="800">
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
+    </WindowChrome.WindowChrome>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!-- Row One -->
+        <Rectangle Fill="LightGray"/>
+        <TextBlock Text=" The Budget Stationery" FontSize="27"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Name="btnMinimize" Content="_" Width="40" Height="40" BorderBrush="Transparent" 
+                    Background="Transparent" Foreground="Black" Click="btnMinimize_Click"/>
+            <Button Name="btnMaximize" Content="🗖" Width="40" Height="40" BorderBrush="Transparent" 
+                    Background="Transparent" Foreground="Black" Click="btnMaximize_Click"/>
+            <Button Name="btnClose" Content="X" Width="40" Height="40" BorderBrush="Transparent" 
+                    Background="Transparent" Foreground="Black" Click="btnClose_Click"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
