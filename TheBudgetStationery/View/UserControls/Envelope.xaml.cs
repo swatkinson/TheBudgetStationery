@@ -21,4 +21,19 @@ public partial class Envelope : UserControl
     {
         InitializeComponent();
     }
+
+    private void btnRemove_Click(object sender, RoutedEventArgs e)
+    {
+
+    }
+
+    private void btnAdd_Click(object sender, RoutedEventArgs e)
+    {
+
+    }
+
+    private void btnEdit_Click(object sender, RoutedEventArgs e)
+    {
+
+    }
 }
