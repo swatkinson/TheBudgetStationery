@@ -47,12 +47,7 @@ public partial class Envelope : UserControl
 
     }
 
-    private void btnRemove_Click(object sender, RoutedEventArgs e)
-    {
-
-    }
-
-    private void btnAdd_Click(object sender, RoutedEventArgs e)
+    private void btnNewTransaction_Click(object sender, RoutedEventArgs e)
     {
 
     }

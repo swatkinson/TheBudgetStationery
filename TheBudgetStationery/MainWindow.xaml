@@ -37,7 +37,7 @@
         <!-- Row Two -->
         <Grid Grid.Row="1">
             <userControls:Envelope Width="750" Height="100" 
-                                   VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                                   VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0" Loaded="Envelope_Loaded"/>
         </Grid>
     </Grid>
 </Window>

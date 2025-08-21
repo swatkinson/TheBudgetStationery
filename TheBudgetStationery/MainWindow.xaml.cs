@@ -40,4 +40,9 @@ public partial class MainWindow : Window
     {
         WindowState = WindowState.Minimized;
     }
+
+    private void Envelope_Loaded(object sender, RoutedEventArgs e)
+    {
+
+    }
 }
