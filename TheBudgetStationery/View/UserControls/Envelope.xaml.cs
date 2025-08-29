@@ -1,26 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Globalization;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 using TheBudgetStationery.Models;
 
 namespace TheBudgetStationery.View.UserControls;
 
-public partial class Envelope : UserControl
+public partial class Envelope
 {
-
     public Models.Envelope MyEnvelope { get; set; }
 
     public Envelope()
@@ -29,12 +17,10 @@ public partial class Envelope : UserControl
 
         if (!DesignerProperties.GetIsInDesignMode(this))
         {
-            // Only set real data at runtime
             this.DataContext = new Models.Envelope();
         }
         else
         {
-            // Set sample data for preview
             this.DataContext = new Models.Envelope
             {
                 Name = "New Unnamed Envelope",
@@ -44,16 +30,38 @@ public partial class Envelope : UserControl
                 CountdownCheck = true,
             };
         }
-
     }
 
     private void btnNewTransaction_Click(object sender, RoutedEventArgs e)
     {
+        // Get the owner window for proper modal behavior & centering
+        var owner = Window.GetWindow(this);
 
+        var dlg = new NewTransactionWindow
+        {
+            Owner = owner,
+            ShowInTaskbar = false,
+            WindowStartupLocation = WindowStartupLocation.CenterOwner
+        };
+
+        bool? ok = dlg.ShowDialog();
+        if (ok == true)
+        {
+            // Pull the result from the dialog
+            var delta = dlg.AmountDelta;
+
+            // Apply to the current envelope model
+            var env = MyEnvelope ?? (this.DataContext as Models.Envelope);
+            if (env is not null)
+            {
+                env.Balance += delta;
+            }
+        }
+        // else: user cancelled or closed the dialog
     }
 
     private void btnEdit_Click(object sender, RoutedEventArgs e)
     {
-
+        // left as-is for now
     }
 }
